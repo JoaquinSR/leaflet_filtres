@@ -8,12 +8,19 @@ var markers = L.markerClusterGroup();
 var data_markers = [];
 
 function onMapLoad() {
-
 	console.log("Mapa cargado");
+
+	navigator.geolocation.getCurrentPosition(function (position) {
+		map.setView([position.coords.latitude, position.coords.longitude], 11);
+	});
+
+
 	/* FASE 3.1
 		1) Relleno el data_markers con una petición a la api */
 
-	$.getJSON("http://localhost/mapa/api/apiRestaurants.php", function (getRest) {
+	/*$.getJSON("http://localhost/mapa/api/apiRestaurants.php", function (getRest) {*/
+
+	$.getJSON("http://" + window.location.hostname + "/mapa/api/apiRestaurants.php", function (getRest) {
 
 		let kindFood = [];
 
@@ -59,8 +66,11 @@ function render_to_map(data_markers, filter) {
 
 	for (marker of data_markers) {
 		if (marker.kind_food.includes(filter) || filter == 'All') {
-			markers.addLayer(L.marker([marker.lat, marker.lng]).bindPopup(
-				"<b>" + marker.name + "</b><br>" + marker.address + "<br><i>" + marker.kind_food + "</i>"));
+			markers.addLayer(L.marker([marker.lat, marker.lng]).bindPopup(`
+			<b>${marker.name}</b><br>
+			${marker.address}<br>
+			<i>${marker.kind_food}</i><br>
+			<img src="img/${marker.photo}"></img>`));
 		}
 	}
 	map.addLayer(markers);

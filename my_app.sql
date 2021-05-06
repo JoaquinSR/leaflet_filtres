@@ -31,6 +31,7 @@ CREATE TABLE `restaurants` (
   `lat` decimal(9,7) DEFAULT NULL,
   `lng` decimal(8,7) DEFAULT NULL,
   `kind_food` set('Americana','China','Japonesa','Italiana','Mediterránea','Gourmet') DEFAULT NULL,
+  `photo` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id_restaurant`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -41,7 +42,7 @@ CREATE TABLE `restaurants` (
 
 LOCK TABLES `restaurants` WRITE;
 /*!40000 ALTER TABLE `restaurants` DISABLE KEYS */;
-INSERT INTO `restaurants` VALUES (1,'KOBUTA Ramen i més','Carrer de Súria, 6, 08014 Barcelona',41.3730407,2.1373389,'China,Japonesa'),(2,'Goiko','Gran Via de les Corts Catalanes, 129, 08014 Barcel',41.3649568,2.1400855,'Americana'),(3,'La terraza Miró','Carrer de Tarragona, 129, 08014 Barcelona',41.3755848,2.1528742,'Mediterránea'),(4,'Nomad Road','Carrer de Manso, 42, 08015 Barcelona',41.3766971,2.1587413,'China,Japonesa'),(5,'La Tagliatella','Gran Via de les Corts Catalanes, 149, 08014 Barcel',41.3643448,2.1456215,'Italiana'),(6,'La Tata','Carrer de Calàbria, 69, 08015 Barcelona',41.3760118,2.1448185,'Mediterránea,Gourmet'),(7,'Barceloneta','Moll dels Pescador, Port Vell, Carrer de l\'Escar, ',41.3751694,2.1852254,'Mediterránea'),(8,'Ginos','Moll d\'Espanya, 5, 08039 Barcelona',41.3743140,2.1836736,'Italiana'),(9,'My Fucking Restauran','Carrer Nou de la Rambla, 35, 08001 Barcelona',41.3755242,2.1733309,'Americana,Italiana'),(10,'Botafumeiro','Carrer Gran de Gràcia, 81, 08012 Barcelona',41.3947452,2.1621070,'Mediterránea,Gourmet');
+INSERT INTO `restaurants` VALUES (1,'KOBUTA Ramen i més','Carrer de Súria, 6, 08014 Barcelona',41.3730407,2.1373389,'China,Japonesa','kobuta.PNG'),(2,'Goiko','Gran Via de les Corts Catalanes, 129, 08014 Barcel',41.3649568,2.1400855,'Americana','goiko.PNG'),(3,'La terraza Miró','Carrer de Tarragona, 129, 08014 Barcelona',41.3755848,2.1528742,'Mediterránea','terraza.PNG'),(4,'Nomad Road','Carrer de Manso, 42, 08015 Barcelona',41.3766971,2.1587413,'China,Japonesa','nomad.PNG'),(5,'La Tagliatella','Gran Via de les Corts Catalanes, 149, 08014 Barcel',41.3643448,2.1456215,'Italiana','tagliatella.PNG'),(6,'La Tata','Carrer de Calàbria, 69, 08015 Barcelona',41.3760118,2.1448185,'Mediterránea,Gourmet','tata.PNG'),(7,'Barceloneta','Moll dels Pescador, Port Vell, Carrer de l\'Escar, ',41.3751694,2.1852254,'Mediterránea','barceloneta.PNG'),(8,'Ginos','Moll d\'Espanya, 5, 08039 Barcelona',41.3743140,2.1836736,'Italiana','ginos.PNG'),(9,'My Fucking Restauran','Carrer Nou de la Rambla, 35, 08001 Barcelona',41.3755242,2.1733309,'Americana,Italiana','myfucking.PNG'),(10,'Botafumeiro','Carrer Gran de Gràcia, 81, 08012 Barcelona',41.3947452,2.1621070,'Mediterránea,Gourmet','botafumeiro.PNG');
 /*!40000 ALTER TABLE `restaurants` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-05 15:52:30
+-- Dump completed on 2021-05-06 18:19:34
